@@ -23,6 +23,6 @@
     "typescript": "^5.3.3"
   },
   "peerDependencies": {
-    "@remix-run/node": "^2.4.1"
+    "@remix-run/server-runtime": "^2.4.1"
   }
 }

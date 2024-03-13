@@ -1,9 +1,28 @@
+import { AppLoadContext, SessionData } from "@remix-run/server-runtime";
+
 export type KindeUser = {
   family_name: string | null;
   given_name: string | null;
   picture: string | null;
   email: string;
   id: string;
+};
+
+export interface Context extends AppLoadContext {
+  env: {
+    KINDE_ISSUER_URL: string;
+    KINDE_CLIENT_ID: string;
+    KINDE_CLIENT_SECRET: string;
+    KINDE_CALLBACK_URL: string;
+    KINDE_POST_LOGOUT_REDIRECT_URL: string;
+    KINDE_POST_LOGIN_REDIRECT_URL: string;
+    KINDE_AUDIENCE: string;
+  };
+  sessionStorage: SessionData;
+}
+
+export type FlagDataTypeMap = {
+  [key: string]: string;
 };
 
 export type KindeAccessToken = {
